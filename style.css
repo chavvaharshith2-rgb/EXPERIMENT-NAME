@@ -1,0 +1,224 @@
+
+/* Basic Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Header using Flexbox */
+.site-header {
+    background: white;
+    padding: 15px 5%;
+    border-bottom: 1px solid #ddd;
+}
+
+.header-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.brand {
+    font-size: 25px;
+    font-weight: bold;
+    color: #e11d48;
+    text-decoration: none;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+}
+
+.nav-list a:hover {
+    color: #e11d48;
+}
+
+.cart {
+    background: #e11d48;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* Main Section */
+.page-main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 5%;
+}
+
+.hero {
+    text-align: center;
+    padding: 35px 10px;
+    background: #ffe4e9;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(25px, 4vw, 38px);
+    color: #be123c;
+}
+
+.hero p {
+    margin-top: 10px;
+}
+
+/* Categories */
+.categories {
+    margin-bottom: 35px;
+}
+
+.categories h2,
+.section-header h2,
+.offers h2 {
+    margin-bottom: 15px;
+}
+
+.category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.category-list span {
+    background: white;
+    padding: 12px 18px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+}
+
+/* Restaurant Grid */
+.section-header {
+    margin-bottom: 20px;
+}
+
+.section-header p {
+    color: #666;
+}
+
+.restaurant-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+/* Restaurant Cards */
+.restaurant-card {
+    container-type: inline-size;
+    container-name: card;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+    transition: 0.3s;
+}
+
+.restaurant-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    transition: 0.3s;
+}
+
+.restaurant-card:hover img {
+    transform: scale(1.04);
+}
+
+.card-body {
+    padding: 16px;
+}
+
+.card-body h3 {
+    font-size: 20px;
+}
+
+.card-body p {
+    color: #666;
+    margin: 8px 0;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    border-top: 1px solid #eee;
+    padding-top: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Container Query */
+@container card (min-width: 380px) {
+    .restaurant-card img {
+        height: 220px;
+    }
+
+    .card-body h3 {
+        font-size: 23px;
+    }
+}
+
+/* Offers and Footer */
+.offers {
+    margin-top: 40px;
+    padding: 25px;
+    background: #ffe4e9;
+    border-radius: 12px;
+    text-align: center;
+}
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .nav-list {
+        gap: 25px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .restaurant-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
